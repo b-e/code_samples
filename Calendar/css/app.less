@@ -1,0 +1,102 @@
+@import "variables.less";
+
+body {
+  font-size: 14px;
+  margin: auto;
+  font-family: "Book Antiqua";
+
+  .wrapper {
+    width: 690px;
+    margin: 25px auto 25px auto;
+  }
+
+  .calendar-timing {
+    float: left;
+    width: 60px;
+    height: 730px;
+    margin: -30px 10px 0 0;
+    padding: 0;
+    text-align: right;
+    color: @light-gray;
+    font-size: 13px;
+    position: relative;
+  }
+
+  .calendar-content {
+    width: @calendar-content-width;
+    float: right;
+    background: @background-gray;
+    height: @calendar-height;
+    width: @calendar-width;
+    position: relative;
+  }
+
+  .calendar-content * {
+    margin-left: 10px;
+    background: white;
+    float:left;
+    position: absolute;
+    overflow: auto;
+  }
+
+  .schedule {
+    float: left;
+    width: 60px;
+    height: 730px;
+    padding: 0;
+    text-align: right;
+    position: relative;
+  }
+
+  .schedule > li {
+    height: @calendar-height/24;
+    line-height: @calendar-height/24;
+    list-style: none;
+  }
+
+  .schedule > li:nth-child(even) {
+    font-size: 11px;
+    color: @light-gray;
+  }
+
+  .schedule > li:nth-child(odd) {
+    color: @dark-gray;
+    font-weight: bold;
+  }
+
+  .schedule > li:nth-child(odd) > small {
+    margin-left: 3px;
+    color: @light-gray;
+    font-weight: normal;
+  }
+
+  .event:before {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 6px;
+    content: " ";
+    display: block;
+    position: absolute;
+    background: @border-blue;
+  }
+
+  .event {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px #d3d3c4 solid;
+    overflow: auto;
+
+    .title {
+      font-size: 11px;
+      font-weight: bold;
+      color: @border-blue;
+    }
+    .description {
+      font-size: 9px;
+      margin-top: 25px;
+    }
+  }
+}
